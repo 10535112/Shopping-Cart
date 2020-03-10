@@ -1,30 +1,117 @@
 <html>
 <head>
 <title>Registration</title>
+<link rel="stylesheet" href={{ url_for('static', filename='css/register.css') }} />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/validateForm.js') }}">
 </script>
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="cold-md-7">
+            <h1 class="text-center">THE BAZAAR REGISTRATION FORM </h1>
+            <p class="text-left"> new customer register here</p> 
+            
+    </div>
+            <div class="col-md-5">
 <form action="/register" method="POST" onsubmit="return validate()">
-    <p>Email: <input type="email" name="email"></p>
+    <div class="row">
+        <div class="cold-md-6">
+            <h3 class="text-left">Registration Form</h3>
+        
+        </div>
+        <div class="cold-md-6">
+            <span class="glyphicon glyphicon-pencil"></span>
+</div>
+    </div>
 
-    <P>Password: <input type="password" name="password" id="password" required></p>
+    <hr>
+    <div class="row">
+    <label class="label col-md-2 control-label">Email</label>
+    <div class="col-md-10">
+        <input type="email" name="email" placeholder="email"> 
+    </div>
+    </div>
 
-    <p>Confirm Password: <input type="password" name="cpassword" id="cpassword"></p>
+    <div class="row">
+        <label class="label col-md-2 control-label">Password</label>
+        <div class="col-md-10">
+            <input type="password" name="password" id="password" required placeholder="password"> 
+        </div>
+        </div>
 
-    <p>First Name: <input type="text" name="firstName"></p>
-    <p>Last Name: <input type="text" name="lastName"></p>
-    <p>Address Line 1: <input type="text" name="address1"></p>
-    <p>Address Line 2: <input type="text" name="address2"></p>
-    <p>Zipcode: <input type="text" name="zipcode"></p>
-    <p>City: <input type="text" name="city"></p>
-    <p>State: <input type="text" name="state"></p>
-    <p>Country: <input type="text" name="country"></p>
-    <p>Phone Number: <input type="text" name="phone"></p>
+        <div class="row">
+            <label class="label col-md-2 control-label">Confirm Password</label>
+            <div class="col-md-10">
+                <input type="password" name="cpassword" id="cpassword" placeholder="cpassword">
+            </div>
+            </div>
+            <div class="row">
+                <label class="label col-md-2 control-label">First Name</label>
+                <div class="col-md-10">
+                    <input type="text" name="firstName">
+                </div>
+                </div>
+                <div class="row">
+                    <label class="label col-md-2 control-label">Last Name </label>
+                    <div class="col-md-10">
+                        <input type="text" name="lastName"> 
+                    </div>
+                    </div>
+                    <div class="row">
+                        <label class="label col-md-2 control-label">Address line 1</label>
+                        <div class="col-md-10">
+                            <input type="text" name="address1">
+                        </div>
+                        </div>
+                        <div class="row">
+                            <label class="label col-md-2 control-label">Address line 2 </label>
+                            <div class="col-md-10">
+                                <input type="text" name="address2"> 
+                            </div>
+                            </div>
+                            <div class="row">
+                                <label class="label col-md-2 control-label"> zipcode </label>
+                                <div class="col-md-10">
+                                    <input type="text" name="zipcode"> 
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <label class="label col-md-2 control-label"> City </label>
+                                    <div class="col-md-10">
+                                        <input type="text" name="city"> 
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="label col-md-2 control-label"> State </label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="state"> 
+                                        </div>
+                                        </div>  
+                                        <div class="row">
+                                            <label class="label col-md-2 control-label"> Country </label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="country"> 
+                                            </div>
+                                            </div> 
+                                            <div class="row">
+                                                <label class="label col-md-2 control-label"> Phone </label>
+                                                <div class="col-md-10">
+                                                    <input type="text" name="phone"> 
+                                                </div>
+                                                </div>  
+                                    <a href="/loginForm"><div class="btn btn-info"> Login </div></a>            
+                
+                                
 
-    <p><input type="submit" value="Register"></p>
-
-    <a href="/loginForm">Login here</a>
+</div>
+</div>
+</div>
 </form>
 </body>
 </html>

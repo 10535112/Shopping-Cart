@@ -1,3 +1,4 @@
+from flask import Flask, render_template
 from flask import *
 import sqlite3, hashlib, os
 from werkzeug.utils import secure_filename
@@ -9,7 +10,7 @@ ALLOWED_EXTENSIONS = set(['jpeg', 'jpg', 'png', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def getLoginDetails():
-    with sqlite3.connect('database.db') as conn:
+    with sqlite3.connect('database.db.sqbpro') as conn:
         cur = conn.cursor()
         if 'email' not in session:
             loggedIn = False
@@ -36,9 +37,10 @@ def root():
     itemData = parse(itemData)   
     return render_template('home.html', itemData=itemData, loggedIn=loggedIn, firstName=firstName, noOfItems=noOfItems, categoryData=categoryData)
 
+
 @app.route("/add")
 def admin():
-    with sqlite3.connect('database.db') as conn:
+    with sqlite3.connect('database.db.sqbpro') as conn:
         cur = conn.cursor()
         cur.execute("SELECT categoryId, name FROM categories")
         categories = cur.fetchall()

@@ -1,3 +1,12 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
 #logo {
 	height: 40px;
 	width: 50px;
@@ -9,7 +18,7 @@
 }
 
 #title {
-	background-color: black;
+	background-color:whitesmoke;
 	display: inline-block;
 	width: 100%;
 }
